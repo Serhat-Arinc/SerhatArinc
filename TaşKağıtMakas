@@ -1,0 +1,90 @@
+import java.util.Scanner;
+public class SerhatArinç {
+    public static void main(String[] args) {
+        // 1 = Taş;
+        // 2 = Kağıt;
+        // 3 = makas;
+        System.out.println("tahmininizi giriniz");
+        Scanner input = new Scanner(System.in);
+        int bilgisayarpuani = 0;
+        int kullanicipuan = 0;
+        while (kullanicipuan < 5 && bilgisayarpuani < 5) {
+            int guess = input.nextInt();
+            int number = (int) (Math.random() * 3)+1;
+            if (number == 1) {
+                if(guess==1) {
+                    System.out.println("Bilgisayarın eli taş");
+                    System.out.println("Sizin eliniz taş");
+                    System.out.println("İkiniz de kazanamadınız.");
+                }
+                if (guess == 2) {
+                    System.out.println("Bilgisayarın eli taş");
+                    System.out.println("Sizin eliniz kağıt");
+                    System.out.println("Siz kazandınız");
+                    kullanicipuan++;
+                } if (guess == 3) {
+                    System.out.println("Bilgisayarın eli taş");
+                    System.out.println("Sizin eliniz makas");
+                    System.out.println("Bilgisayar kazandı");
+                    bilgisayarpuani++;
+                }
+
+            }
+            if (number == 2) {
+                if (guess == 1) {
+                    System.out.println("Bilgisayarın eli kağıt");
+                    System.out.println("Sizin eliniz taş");
+                    System.out.println("Bilgisayar kazandı");
+                    bilgisayarpuani++;
+                }
+                if (guess == 2) {
+                    System.out.println("İkinizin eli de aynı" );
+                    System.out.println("ikiniz de kazanamadınız");
+                }
+                if (guess == 3) {
+                    System.out.println("Bilgisayarın eli kağıt");
+                    System.out.println("Sizin eliniz makas");
+                    System.out.println("Siz kazandınız");
+                    kullanicipuan++;
+                }
+
+
+            }
+            if (number == 3) {
+                if (guess == 1) {
+                    System.out.println("bilgisayaerın  eli makas  ");
+                    System.out.println("sizin eliniz taş");
+                    System.out.println("Siz kazandınız");
+                    kullanicipuan++;
+                } if (guess == 2) {
+                    System.out.println("bilgisayaerın  eli makas  " );
+                    System.out.println("sizin eliniz kağıt");
+                    System.out.println("Bilgisayar kazandı");
+                    bilgisayarpuani++;
+                }
+                if(guess==3) {
+                    System.out.println("İkinizin eli de aynı" );
+                    System.out.println("ikiniz de kazanamadınız");
+                }
+
+            }
+            if(guess>3|| guess<1)   {
+                System.out.println("lütfen 1, 2 yada 3 sayısından birini giriniz");
+
+            }
+        }
+        System.out.println("Sizin doğru tahmin sayınız   " + kullanicipuan);
+        System.out.println("Bilgisayarın doğru tahmin sayısı " + bilgisayarpuani);
+        if(bilgisayarpuani < kullanicipuan){
+            System.out.println("Siz kazandınız");
+        }
+        else
+            System.out.println("Bilgisayar kazandı");
+
+
+
+
+
+    }
+}
+
